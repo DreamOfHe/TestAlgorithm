@@ -1,11 +1,11 @@
 package com.hlx.array;
 
-public class ClassDataArray{
+public class InsertSortPerson{
 	
 	private Person[] person;
 	private int nElems;
 	
-	public ClassDataArray(int max) {
+	public InsertSortPerson(int max) {
 		person = new Person[max];
 		nElems = 0;
 	}
@@ -46,6 +46,19 @@ public class ClassDataArray{
 	public void displayArray(){
 		for(int j=0; j<nElems; j++){
 			person[j].displayPerson();
+		}
+	}
+	
+	public void insertSort(){
+		int in, out;
+		for(out=1; out<nElems; out++){
+			Person temp = person[out];
+			in = out;
+			while(in>0 && person[in-1].getLast().compareTo(temp.getLast())>0){
+				person[in]=person[in-1];
+				--in;
+			}
+			person[in] = temp;
 		}
 	}
 }

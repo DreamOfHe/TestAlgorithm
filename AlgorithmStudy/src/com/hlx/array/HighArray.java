@@ -6,7 +6,7 @@ public class HighArray {
 	private int nElems;
 	
 	public HighArray(int max){
-		array = new long[max + 1];
+		array = new long[max];
 		nElems = 0;
 	}
 	
@@ -36,7 +36,7 @@ public class HighArray {
 			return -1;
 		} else {
 			long deleteElem = array[j];
-			for(int k=j; k<nElems; k++){
+			for(int k=j; k<nElems-1; k++){
 				array[k] = array[k+1];
 			}
 			nElems--;

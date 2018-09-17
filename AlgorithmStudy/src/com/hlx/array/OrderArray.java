@@ -6,7 +6,7 @@ public class OrderArray {
 	private int nElems;
 
 	public OrderArray(int max) {
-		array = new long[max + 1];
+		array = new long[max];
 		nElems = 0;
 	}
 
@@ -99,7 +99,7 @@ public class OrderArray {
 		if (j == nElems) {
 			return false;
 		} else {
-			for (int k = j; k < nElems; k++) {
+			for (int k = j; k < nElems-1; k++) {
 				array[k] = array[k + 1];
 			}
 			nElems--;
