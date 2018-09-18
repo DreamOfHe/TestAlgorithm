@@ -23,7 +23,7 @@ public class BracketChecker {
 				case ']':
 				case ')':
 					if(!theStack.isEmpty()){
-						char chx = theStack.pop();
+						char chx = (Character) theStack.pop();
 						if((ch=='}' && chx != '{') ||
 						   (ch==']' && chx != '[') ||
 						   (ch==')' && chx != '(')){

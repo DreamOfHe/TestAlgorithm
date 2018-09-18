@@ -18,7 +18,7 @@ public class Reverser {
 		
 		output = "";
 		while(!stack.isEmpty()){
-			char ch = stack.pop();
+			char ch = (Character) stack.pop();
 			output = output + ch;
 		}
 		return output;

@@ -3,24 +3,24 @@ package com.hlx.array;
 public class StackX {
 
 	private int maxSize;
-	private char[] stackArray;
+	private Object[] stackArray;
 	private int top;
 	
 	public StackX(int max){
 		maxSize = max;
-		stackArray = new char[maxSize];
+		stackArray = new Object[maxSize];
 		top = -1;
 	}
 	
-	public void push(char item){
+	public void push(Object item){
 		stackArray[++top] = item;
 	}
 	
-	public char pop(){
+	public Object pop(){
 		return stackArray[top--];
 	}
 	
-	public char peek(){
+	public Object peek(){
 		return stackArray[top];
 	}
 	
@@ -30,5 +30,22 @@ public class StackX {
 	
 	public boolean isFull(){
 		return (top == maxSize-1);
+	}
+	
+	public int size(){
+		return top+1;
+	}
+	
+	public Object peekN(int n){
+		return stackArray[n];
+	}
+	
+	public void displayStack(String s){
+		System.out.print(s);
+		System.out.print("Stack (bottom-->top): ");
+		for(int j=0; j<size(); j++){
+			System.out.print(peekN(j) + " ");
+		}
+		System.out.println("");
 	}
 }
