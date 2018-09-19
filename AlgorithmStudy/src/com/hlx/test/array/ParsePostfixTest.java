@@ -1,4 +1,4 @@
-package com.hlx.test;
+package com.hlx.test.array;
 
 import java.io.IOException;
 

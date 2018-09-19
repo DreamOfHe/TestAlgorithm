@@ -1,10 +1,10 @@
-package com.hlx.test;
+package com.hlx.test.array;
 
-import com.hlx.array.StackY;
+import com.hlx.array.StackX;
 
-public class StackYTest {
+public class StackXTest {
 	public static void main(String[] args) {
-		StackY stack = new StackY(10);
+		StackX stack = new StackX(10);
 		stack.push('a');
 		stack.push('b');
 		stack.push('c');
