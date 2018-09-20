@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.hlx.array.Queue1;
 import com.hlx.common.MyMethod;
 
-public class SuperMarketTest {
+public class SuperMarketTest { // programming work 4.5
 	private Queue1[] queue = { null, new Queue1(20), new Queue1(20), new Queue1(20), new Queue1(20) }; // 4个顾客队列
 
 	// 模拟收银
