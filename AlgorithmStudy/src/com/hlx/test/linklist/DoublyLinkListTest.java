@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.DoublyLinkList;
+import com.hlx.algorithm.linklist.DoublyLinkList;
 
 public class DoublyLinkListTest {
 	public static void main(String[] args){

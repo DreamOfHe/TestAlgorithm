@@ -1,7 +1,7 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.Link;
-import com.hlx.linklist.ListInsertSort;
+import com.hlx.algorithm.linklist.Link;
+import com.hlx.algorithm.linklist.ListInsertSort;
 
 public class ListInsertSortTest {
 

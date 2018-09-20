@@ -2,7 +2,7 @@ package com.hlx.test.array;
 
 import java.io.IOException;
 
-import com.hlx.array.Reverser;
+import com.hlx.algorithm.array.Reverser;
 import com.hlx.common.MyMethod;
 
 public class ReverserTest {

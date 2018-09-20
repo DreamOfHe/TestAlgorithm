@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.InsertSortPerson;
+import com.hlx.algorithm.array.InsertSortPerson;
 
 public class InsertSortPersonTest {
 

@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.DoublyLinkListDeque;
+import com.hlx.algorithm.linklist.DoublyLinkListDeque;
 
 public class DoublyLinkListDequeTest {
 	public static void main(String[] args){

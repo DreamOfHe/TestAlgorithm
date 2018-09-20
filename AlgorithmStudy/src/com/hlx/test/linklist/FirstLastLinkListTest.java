@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.FirstLastLinkList;
+import com.hlx.algorithm.linklist.FirstLastLinkList;
 
 public class FirstLastLinkListTest {
 	

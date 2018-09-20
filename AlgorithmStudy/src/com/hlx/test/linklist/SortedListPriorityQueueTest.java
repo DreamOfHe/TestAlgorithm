@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.SortedListPriorityQueue;
+import com.hlx.algorithm.linklist.SortedListPriorityQueue;
 
 public class SortedListPriorityQueueTest {
 	public static void main(String[] args){

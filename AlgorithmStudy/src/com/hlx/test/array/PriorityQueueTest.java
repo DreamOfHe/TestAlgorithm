@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.PriorityQueue1;
+import com.hlx.algorithm.array.PriorityQueue1;
 
 public class PriorityQueueTest {
 	public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.LinkQueue;
+import com.hlx.algorithm.linklist.LinkQueue;
 
 public class LinkQueueTest {
 	public static void main(String[] args) {

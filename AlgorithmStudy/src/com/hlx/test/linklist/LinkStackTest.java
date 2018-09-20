@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.LinkStack;
+import com.hlx.algorithm.linklist.LinkStack;
 
 public class LinkStackTest {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.hlx.test.array;
 
-import com.hlx.array.ClassDataArray;
-import com.hlx.array.Person;
+import com.hlx.algorithm.array.ClassDataArray;
+import com.hlx.algorithm.array.Person;
 
 public class ClassDataArrayTest {
 

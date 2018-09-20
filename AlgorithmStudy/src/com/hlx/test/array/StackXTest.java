@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.StackX;
+import com.hlx.algorithm.array.StackX;
 
 public class StackXTest {
 	public static void main(String[] args) {

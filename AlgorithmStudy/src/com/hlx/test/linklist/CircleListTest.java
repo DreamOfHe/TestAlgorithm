@@ -1,7 +1,7 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.CircleList;
-import com.hlx.linklist.Link;
+import com.hlx.algorithm.linklist.CircleList;
+import com.hlx.algorithm.linklist.Link;
 
 public class CircleListTest {
 	public static void main(String[] args){

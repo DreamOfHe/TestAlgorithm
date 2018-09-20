@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.SortedList;
+import com.hlx.algorithm.linklist.SortedList;
 
 public class SortedListTest {
 	public static void main(String[] args){

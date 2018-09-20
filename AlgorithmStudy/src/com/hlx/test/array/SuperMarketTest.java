@@ -2,7 +2,7 @@ package com.hlx.test.array;
 
 import java.io.IOException;
 
-import com.hlx.array.Queue1;
+import com.hlx.algorithm.array.Queue1;
 import com.hlx.common.MyMethod;
 
 public class SuperMarketTest { // programming work 4.5

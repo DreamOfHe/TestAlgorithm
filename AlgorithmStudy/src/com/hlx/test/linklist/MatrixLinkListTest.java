@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.MatrixLinkList;
+import com.hlx.algorithm.linklist.MatrixLinkList;
 
 public class MatrixLinkListTest {
 	public static void main(String[] args) {

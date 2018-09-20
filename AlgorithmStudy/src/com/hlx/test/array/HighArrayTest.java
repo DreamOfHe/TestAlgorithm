@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.HighArray;
+import com.hlx.algorithm.array.HighArray;
 
 public class HighArrayTest {
 

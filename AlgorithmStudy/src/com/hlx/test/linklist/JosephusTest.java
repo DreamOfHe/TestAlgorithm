@@ -1,6 +1,6 @@
 package com.hlx.test.linklist;
 
-import com.hlx.linklist.CircleList;
+import com.hlx.algorithm.linklist.CircleList;
 
 public class JosephusTest { // programming work 5.5
 

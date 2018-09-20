@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.Queue1;
+import com.hlx.algorithm.array.Queue1;
 
 public class QueueTest {
 	public static void main(String[] args) {

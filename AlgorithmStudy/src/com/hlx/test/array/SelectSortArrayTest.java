@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.SelectSortArray;
+import com.hlx.algorithm.array.SelectSortArray;
 
 public class SelectSortArrayTest {
 	public static void main(String[] args) {

@@ -2,9 +2,9 @@ package com.hlx.test.linklist;
 
 import java.io.IOException;
 
+import com.hlx.algorithm.linklist.LinkList2;
+import com.hlx.algorithm.linklist.LinkListIterator;
 import com.hlx.common.MyMethod;
-import com.hlx.linklist.LinkList2;
-import com.hlx.linklist.LinkListIterator;
 
 public class LinkListIteratorTest {
 	public static void main(String[] args) throws IOException {

@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.BubbleSortArray;
+import com.hlx.algorithm.array.BubbleSortArray;
 
 public class BubbleSortArrayTest {
 	public static void main(String[] args) {

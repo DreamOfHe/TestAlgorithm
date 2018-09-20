@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.StackY;
+import com.hlx.algorithm.array.StackY;
 
 public class StackYTest {
 	public static void main(String[] args) {

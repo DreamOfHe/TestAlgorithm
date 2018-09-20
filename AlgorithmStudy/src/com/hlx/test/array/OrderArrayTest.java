@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.OrderArray;
+import com.hlx.algorithm.array.OrderArray;
 
 public class OrderArrayTest {
 

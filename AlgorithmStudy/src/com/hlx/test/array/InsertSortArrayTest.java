@@ -1,6 +1,6 @@
 package com.hlx.test.array;
 
-import com.hlx.array.InsertSortArray;
+import com.hlx.algorithm.array.InsertSortArray;
 
 public class InsertSortArrayTest {
 
