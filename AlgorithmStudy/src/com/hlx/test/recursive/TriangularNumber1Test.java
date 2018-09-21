@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.hlx.common.MyMethod;
 
-public class TriangularNumberTest {
+public class TriangularNumber1Test {
 	
 	private static int theNumber;
 	
