@@ -5,11 +5,24 @@ public class QuickSortArray2 {
 	private long[] array;
 	private int nElems;
 	
+	private long compareCount; // compare count
+	private long copyCount;    // copy count
+	
 	public QuickSortArray2(int max){
 		array = new long[max];
 		nElems = 0;
+		compareCount = 0;
+		copyCount = 0;
 	}
 	
+	public long getCompareCount() {
+		return compareCount;
+	}
+
+	public long getCopyCount() {
+		return copyCount;
+	}
+
 	public void insert(long value){
 		array[nElems] = value;
 		nElems++;
@@ -54,6 +67,8 @@ public class QuickSortArray2 {
 			swap(center, right);
 		}
 		
+		compareCount += 3;
+		
 		swap(center, right-1); // put pivot on right
 		return array[right-1]; // return median value
 	}
@@ -62,15 +77,21 @@ public class QuickSortArray2 {
 		int leftPtr = left;  // right of first elem
 		int rightPtr = right - 1; // left of pivot
 		while(true){
-			while(array[++leftPtr] < pivot) // find bigger item
-				; // nop
-			while(array[--rightPtr] > pivot) // find smaller item
-				;
+			do{
+				compareCount++;
+			} while(array[++leftPtr] < pivot);
+			
+			do{
+				compareCount++;
+			} while(array[--rightPtr] > pivot);
+			
 			if(leftPtr >= rightPtr){ // if pointers cross, partition done
 				break;
 			} else {
 				swap(leftPtr, rightPtr); // swap elements
 			}
+			
+			compareCount++;
 		}
 		swap(leftPtr, right-1);  // restore pivot
 		return leftPtr;
@@ -85,6 +106,7 @@ public class QuickSortArray2 {
 			if(array[left] > array[right]){
 				swap(left, right);
 			}
+			compareCount++;
 			return;
 		} else {
 			if(array[left]>array[right-1]){ // left, center
@@ -96,6 +118,7 @@ public class QuickSortArray2 {
 			if(array[right-1]>array[right]){// center, right
 				swap(right-1, right);
 			}
+			compareCount += 3;
 		}
 	}
 	
@@ -103,5 +126,6 @@ public class QuickSortArray2 {
 		long temp = array[dex1];
 		array[dex1] = array[dex2];
 		array[dex2] = temp;
+		copyCount += 3;
 	}
 }
