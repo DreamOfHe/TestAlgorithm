@@ -21,14 +21,14 @@ public class MergeArrayTest {
 			} else {
 				arrayC[cDex++] = arrayB[bDex++];
 			}
-			
-			while(aDex < sizeA){ // arrayB is empty, but arrayA isn't
-				arrayC[cDex++] = arrayA[aDex++];
-			}
-			
-			while(bDex < sizeB){ // arrayA is empty, but arrayB isn't
-				arrayC[cDex++] = arrayB[bDex++];
-			}
+		}
+		
+		while(aDex < sizeA){ // arrayB is empty, but arrayA isn't
+			arrayC[cDex++] = arrayA[aDex++];
+		}
+		
+		while(bDex < sizeB){ // arrayA is empty, but arrayB isn't
+			arrayC[cDex++] = arrayB[bDex++];
 		}
 	}
 	
