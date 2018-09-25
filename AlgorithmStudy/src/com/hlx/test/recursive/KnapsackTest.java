@@ -1,22 +1,22 @@
 package com.hlx.test.recursive;
 
 public class KnapsackTest { // programming work 6.4
-	private int[] weights; // ¿É¹©Ñ¡ÔñµÄÖØÁ¿
-	private boolean[] selects; // ¼ÇÂ¼ÊÇ·ñ±»Ñ¡Ôñ
+	private int[] weights; // å¯ä¾›é€‰æ‹©çš„é‡é‡
+	private boolean[] selects; // è®°å½•æ˜¯å¦è¢«é€‰æ‹©
 
 	public KnapsackTest(int[] weights) {
 		this.weights = weights;
 		selects = new boolean[weights.length];
 	}
 
-	// ÕÒËùÓĞ¿ÉÄÜµÄ½â
-	// total×ÜÖØÁ¿
-	// index¿É¹©Ñ¡ÔñµÄÖØÁ¿
+	// æ‰¾æ‰€æœ‰å¯èƒ½çš„è§£
+	// totalæ€»é‡é‡
+	// indexå¯ä¾›é€‰æ‹©çš„é‡é‡
 	public void knapsack(int total, int index) {
-		if (total < 0 || total > 0 && index >= weights.length) {// »ùÖµ,Ã»ÕÒµ½½â
+		if (total < 0 || total > 0 && index >= weights.length) {// åŸºå€¼,æ²¡æ‰¾åˆ°è§£
 			return;
 		}
-		if (total == 0) { // »ùÖµ£¬ÕÒµ½½â
+		if (total == 0) { // åŸºå€¼ï¼Œæ‰¾åˆ°è§£
 			for (int i = 0; i < index; i++) {
 				if (selects[i] == true) {
 					System.out.print(weights[i] + " ");

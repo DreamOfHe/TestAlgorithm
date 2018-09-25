@@ -14,7 +14,7 @@ public class OrderArray {
 		return nElems;
 	}
 
-	public int find1(long searchKey) { // 循环二分查找
+	public int find1(long searchKey) { // 寰幆鏌ユ壘
 		int lowerBound = 0;
 		int upperBound = nElems - 1;
 		int curIn;
@@ -35,7 +35,7 @@ public class OrderArray {
 		}
 	}
 	
-	public int find2(long searchKey){ // 递归二分查找
+	public int find2(long searchKey){ // 閫掑綊鏌ユ壘
 		return recFind(searchKey, 0, nElems-1);
 	}
 	

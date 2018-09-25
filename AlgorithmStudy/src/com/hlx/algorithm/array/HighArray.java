@@ -79,13 +79,13 @@ public class HighArray {
 		}
  
 		for (int i = 0; i < nElems;) {
-			if (array[i] == NULL) { // ×¢Òâ:ÒÆ¶¯Íê³Éºó²»Òªi++£¬ÔÙ´Î¼ì²éµ±Ç°Î»ÖÃÊÇ·ñÎªNULL
+			if (array[i] == NULL) { // æ³¨æ„:ç§»åŠ¨å®ŒæˆåŽä¸è¦i++ï¼Œå†æ¬¡æ£€æŸ¥å½“å‰ä½ç½®æ˜¯å¦ä¸ºNULL
 				for (int j = i + 1; j < nElems; j++) {
 					array[j - 1] = array[j];
 				}
 				nElems--;
 			} else {
-				i++; // ²»ÊÇNULL£¬Ö±½Ói++;
+				i++; // ä¸æ˜¯NULLï¼Œç›´æŽ¥i++;
 			}
 		}
 	}
@@ -103,7 +103,7 @@ public class HighArray {
  
 		int order = 0;
 		for (int temp = 0; temp < nElems; temp++) {
-			if (array[temp] != NULL) {// ÒòÎªa[0]²»¿ÉÄÜµÈÓÚNULLËùÒÔ²Å¿ÉÒÔÓÃÕâÖÖ·½·¨
+			if (array[temp] != NULL) {// å› ä¸ºa[0]ä¸å¯èƒ½ç­‰äºŽNULLæ‰€ä»¥æ‰å¯ä»¥ç”¨è¿™ç§æ–¹æ³•
 				if (temp > order) {
 					array[order] = array[temp];
 				}

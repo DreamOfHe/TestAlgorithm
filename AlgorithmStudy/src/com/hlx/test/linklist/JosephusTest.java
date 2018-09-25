@@ -6,14 +6,14 @@ public class JosephusTest { // programming work 5.5
 
 	public static int getJosephus(int number) {
 		CircleList circleList = new CircleList();
-		for (int i = 1; i <= number; i++) { // number¸öÈËÅÅ³É»·
+		for (int i = 1; i <= number; i++) { // numberä¸ªäººæŽ’æˆçŽ¯
 			circleList.insert(i);
 		}
-		System.out.print("Ô­Ê¼È¦×Ó£º");
+		System.out.print("åŽŸå§‹åœˆå­ï¼š");
 		circleList.display();
-		System.out.print("³öÈ¦Ë³Ðò£º");
-		for (int i = 1; i < number; i++) { // ÒªÉ¾µônumber-1¸öÈË
-			for (int j = 1; j < 4; j++) { //²»ÄÜÊýµ½ËÄ£¬ÒòÎªremove()·½·¨É¾µôµÄÊÇÏÂÒ»¸ö
+		System.out.print("å‡ºåœˆé¡ºåºï¼š");
+		for (int i = 1; i < number; i++) { // è¦åˆ æŽ‰number-1ä¸ªäºº
+			for (int j = 1; j < 4; j++) { //ä¸èƒ½æ•°åˆ°å››ï¼Œå› ä¸ºremove()æ–¹æ³•åˆ æŽ‰çš„æ˜¯ä¸‹ä¸€ä¸ª
 				circleList.step();
 			}
 			System.out.print(circleList.remove().getId() + " ");
@@ -24,7 +24,7 @@ public class JosephusTest { // programming work 5.5
 
 	public static void main(String[] args) {
 		int number = JosephusTest.getJosephus(7);
-		System.out.println("JosephusµÄ±àºÅÊÇ:" + number);
+		System.out.println("Josephusçš„ç¼–å·æ˜¯:" + number);
 	}
 
 }

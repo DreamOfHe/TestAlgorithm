@@ -44,7 +44,7 @@ public class PowerTest {
 			if(y % 2 == 0){
 				temp = power2(x*x, y/2);
 			} else {
-				temp = power2(x*x, y/2) * x;  // ·µ»Ø¹ý³ÌÖÐ£¬Èç¹û  y ÊÇÒ»¸öÆæÊý£¬ÄÇÃ´¾Í¶à³ËÒÔÒ»¸ö x
+				temp = power2(x*x, y/2) * x;  // è¿”å›žè¿‡ç¨‹ä¸­ï¼Œå¦‚æžœ y æ˜¯ä¸€ä¸ªå¥‡æ•°ï¼Œé‚£ä¹ˆå¤šä¹˜ä¸€ä¸ª x
 			}
 			
 			return temp;

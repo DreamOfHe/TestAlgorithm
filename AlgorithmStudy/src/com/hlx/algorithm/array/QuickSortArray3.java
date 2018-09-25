@@ -38,7 +38,7 @@ public class QuickSortArray3 {
 		}
 	}
 	
-	public long medianOf3(int left, int right){ // 三数据项取中
+	public long medianOf3(int left, int right){ 
 		
 		int center = (left+right)/2;
 		

@@ -6,34 +6,34 @@ import com.hlx.algorithm.array.Queue1;
 import com.hlx.common.MyMethod;
 
 public class SuperMarketTest { // programming work 4.5
-	private Queue1[] queue = { null, new Queue1(20), new Queue1(20), new Queue1(20), new Queue1(20) }; // 4¸ö¹Ë¿Í¶ÓÁĞ
+	private Queue1[] queue = { null, new Queue1(20), new Queue1(20), new Queue1(20), new Queue1(20) }; // 4ä¸ªé¡¾å®¢é˜Ÿåˆ—
 
-	// Ä£ÄâÊÕÒø
+	//æ¨¡æ‹Ÿæ”¶é“¶
 	public void simulate() throws IOException {
-		long id = 0; // ¹Ë¿Í±àºÅ
+		long id = 0; // é¡¾å®¢ç¼–å·
 		boolean flag = true;
 		while (flag) {
-			System.out.println("ÇëÑ¡ÔñÊÂ¼ş£º");
-			System.out.print("0.ÓĞ¹Ë¿Í½øÈëÄ³¸ö¶ÓÁĞ¡£");
-			System.out.print("1.ÓĞ¹Ë¿ÍÀë¿ªµÚ1¸ö¶ÓÀı¡£");
-			System.out.print("2.ÓĞ¹Ë¿ÍÀë¿ªµÚ2¸ö¶ÓÀı¡£");
-			System.out.print("3.ÓĞ¹Ë¿ÍÀë¿ªµÚ3¸ö¶ÓÀı¡£");
-			System.out.print("4.ÓĞ¹Ë¿ÍÀë¿ªµÚ4¸ö¶ÓÀı¡£");
-			System.out.println("q.±íÊ¾³ÌĞòÍË³ö£¡");
+			System.out.println("è¯·é€‰æ‹©äº‹ä»¶ï¼š");
+			System.out.print("0.æœ‰é¡¾å®¢è¿›å…¥æŸä¸ªé˜Ÿåˆ—ã€‚");
+			System.out.print("1.æœ‰é¡¾å®¢ç¦»å¼€ç¬¬1ä¸ªé˜Ÿä¾‹ã€‚");
+			System.out.print("2.æœ‰é¡¾å®¢ç¦»å¼€ç¬¬2ä¸ªé˜Ÿä¾‹ã€‚");
+			System.out.print("3.æœ‰é¡¾å®¢ç¦»å¼€ç¬¬3ä¸ªé˜Ÿä¾‹ã€‚");
+			System.out.print("4.æœ‰é¡¾å®¢ç¦»å¼€ç¬¬4ä¸ªé˜Ÿä¾‹ã€‚");
+			System.out.println("q.è¡¨ç¤ºç¨‹åºé€€å‡ºï¼");
 			String s = MyMethod.getString();
-			if (s.length() == 0) {// Ö±½ÓÊäÈë»Ø³µ
+			if (s.length() == 0) {//ç›´æ¥è¾“å…¥å›è½¦
 				continue;
 			}
 			char ch = s.charAt(0);
 			switch (ch) {
 			case '0':
 				id++;
-				insertQueue(id); // ¹Ë¿Í½øÈë¶ÓÁĞ
-				displayQueue(); // ÏÔÊ¾¶ÓÁĞ
+				insertQueue(id); // é¡¾å®¢è¿›å…¥é˜Ÿåˆ—
+				displayQueue(); // æ˜¾ç¤ºé˜Ÿåˆ—
 				break;
 			case '1':
-				removeQueue(1); // ¹Ë¿ÍÀë¿ª¶ÓÁĞ
-				displayQueue(); // ÏÔÊ¾¶ÓÁĞ
+				removeQueue(1); // é¡¾å®¢ç¦»å¼€é˜Ÿåˆ—
+				displayQueue(); // æ˜¾ç¤ºé˜Ÿåˆ—
 				break;
 			case '2':
 				removeQueue(2);
@@ -47,7 +47,7 @@ public class SuperMarketTest { // programming work 4.5
 				removeQueue(4);
 				displayQueue();
 				break;
-			case 'q': // ÍË³ö³ÌĞò
+			case 'q': // é€€å‡ºç¨‹åº
 				flag = false;
 				System.out.println("byebye!");
 				break;
@@ -57,23 +57,23 @@ public class SuperMarketTest { // programming work 4.5
 		}
 	}
 
-	// ´Ó¶ÓÁĞÖĞÉ¾³ı¹Ë¿Í
+	// ä»é˜Ÿåˆ—ä¸­åˆ é™¤é¡¾å®¢
 	private void removeQueue(int queueId) {
 		if (queue[queueId].size() == 0) {
 			return;
 		}
 		long id = queue[queueId].remove();
-		System.out.println("¹Ë¿Í" + id + "Àë¿ªµÚ" + queueId + "¸ö¶ÓÁĞ£¡");
+		System.out.println("é¡¾å®¢" + id + "ç¦»å¼€ç¬¬" + queueId + "ä¸ªé˜Ÿåˆ—ï¼");
 	}
 
-	// °Ñ¹Ë¿Í²åÈëµ½¶ÓÁĞ
+	// æŠŠé¡¾å®¢æ’å…¥åˆ°é˜Ÿåˆ—
 	public void insertQueue(long id) {
 		int queueId = getMinQueueId();
 		queue[queueId].insert(id);
-		System.out.println("¹Ë¿Í" + id + "½øÈëµÚ" + queueId + "¸ö¶ÓÀı");
+		System.out.println("é¡¾å®¢" + id + "è¿›å…¥ç¬¬" + queueId + "ä¸ªé˜Ÿä¾‹");
 	}
 
-	// µÃµ½×îĞ¡¶ÓÁĞµÄ±àºÅ
+	// å¾—åˆ°æœ€å°é˜Ÿåˆ—çš„ç¼–å·
 	private int getMinQueueId() {
 		int min = 1;
 		for (int i = 2; i < 5; i++) {
@@ -84,10 +84,10 @@ public class SuperMarketTest { // programming work 4.5
 		return min;
 	}
 
-	// ´òÓ¡ÏÔÊ¾ËÄÌõ¶ÓÁĞ
+	// æ‰“å°æ˜¾ç¤ºå››æ¡é˜Ÿåˆ—
 	public void displayQueue() {
 		for (int i = 1; i < 5; i++) {
-			System.out.print("µÚ" + i + "¸ö¶ÓÁĞ£º");
+			System.out.print("ç¬¬" + i + "ä¸ª");
 			queue[i].displayQueue();
 		}
 		System.out.println();

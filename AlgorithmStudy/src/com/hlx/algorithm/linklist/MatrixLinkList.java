@@ -1,7 +1,7 @@
 package com.hlx.algorithm.linklist;
 
 // programming work 5.6
-// ¾ß±¾ÊµÏÖ¿ÉÄÜºÍÌâÄ¿ÒªÇóÓĞĞ©³öÈë
+// å…·æœ¬å®ç°å¯èƒ½å’Œé¢˜ç›®è¦æ±‚æœ‰äº›å‡ºå…¥
 public class MatrixLinkList {
 	private MatrixLink first;
 	private int high;
@@ -10,16 +10,16 @@ public class MatrixLinkList {
 	public MatrixLinkList(int high, int width) {
 		this.high = high;
 		this.width = width;
-		MatrixLink row1 = createRow(); // Éú³ÉµÚÒ»ĞĞ
+		MatrixLink row1 = createRow(); // ç”Ÿæˆç¬¬ä¸€è¡Œ
 		first = row1;
 		for (int i = 2; i <= high; i++) {
 			MatrixLink row = createRow();
-			connectTwoRow(row1, row); // Á¬½ÓÁ½ĞĞ
+			connectTwoRow(row1, row); // è¿æ¥ä¸¤è¡Œ
 			row1 = row;
 		}
 	}
-
-	// ²åÈë»òĞŞ¸ÄÒ»¸öÖµ
+	
+	// æ’å…¥æˆ–ä¿®æ”¹ä¸€ä¸ªå€¼
 	public void insert(int row, int column, int value) {
 		MatrixLink current = first;
 		for (int i = 1; i < row; i++) {
@@ -31,60 +31,60 @@ public class MatrixLinkList {
 		current.setId(value);
 	}
 
-	// ²åÈëÒ»ĞĞ
+	// æ’å…¥ä¸€è¡Œ
 	public void addRow(int index) {
-		if (high == 0) {// ¿Õ¾ØÕó²»ÄÜÌí¼ÓÁĞ
+		if (high == 0) {// ç©ºçŸ©é˜µä¸èƒ½æ·»åŠ åˆ—
 			return;
 		}
-		if (index < 1 || index > high + 1) {// ²åÈëµÄÎ»ÖÃ·Ç·¨
+		if (index < 1 || index > high + 1) {// æ’å…¥çš„ä½ç½®éæ³•
 			return;
 		}
-		MatrixLink newRow = createRow(); // ĞÂĞĞ
+		MatrixLink newRow = createRow(); // æ–°è¡Œ
 		MatrixLink previousRow = first;
-		if (index == 1) { // ²åµ½µÚÒ»ĞĞ
+		if (index == 1) { // æ’åˆ°ç¬¬ä¸€è¡Œ
 			connectTwoRow(newRow, previousRow);
 			first = newRow;
-		} else if (index == high + 1) { // ²åµ½×îºóÒ»ĞĞºóÃæ
+		} else if (index == high + 1) { // æ’åˆ°æœ€åä¸€è¡Œåé¢
 			while (previousRow.goDown != null) {
-				previousRow = previousRow.goDown; // ÕÒµ½×îºóÒ»ĞĞ
+				previousRow = previousRow.goDown; // æ‰¾åˆ°æœ€åä¸€è¡Œ
 			}
 			connectTwoRow(previousRow, newRow);
-		} else {// ²åµ½ÖĞ¼ä
+		} else {// ï¿½åµ½ï¿½Ğ¼ï¿½
 			for (int i = 2; i < index; i++) {
-				previousRow = previousRow.goDown;// ²åÈëĞĞÎ»ÖÃµÄÇ°Ò»ĞĞ
+				previousRow = previousRow.goDown;// æ’å…¥è¡Œä½ç½®çš„å‰ä¸€è¡Œ
 			}
-			MatrixLink currentRow = previousRow.goDown; // ²åÈëĞĞÎ»ÖÃ
+			MatrixLink currentRow = previousRow.goDown; // æ’å…¥è¡Œä½ç½®
 			connectTwoRow(previousRow, newRow);
 			connectTwoRow(newRow, currentRow);
 		}
-		high++;// ĞĞÊı¼ÓÒ»
+		high++;// è¡Œæ•°åŠ ä¸€
 	}
 
-	// ²åÈëÒ»ÁĞ
+	// æ’å…¥ä¸€åˆ—
 	public void addColumn(int index) {
-		if (width == 0) {// ¿Õ¾ØÕó²»ÄÜÌí¼ÓÁĞ
+		if (width == 0) {// ç©ºçŸ©é˜µä¸èƒ½æ·»åŠ åˆ—
 			return;
 		}
-		if (index < 1 || index > width + 1) { // ²åÈëµÄÎ»ÖÃ·Ç·¨
+		if (index < 1 || index > width + 1) { // æ’å…¥çš„ä½ç½®éæ³•
 			return;
 		}
 		MatrixLink newColumn = createColumn();
 		MatrixLink previousColumn = first;
-		if (index == 1) { // ²åµ½µÚÒ»ÁĞ
+		if (index == 1) { // æ’åˆ°ç¬¬ä¸€åˆ—
 			connectTwoColumn(newColumn, previousColumn);
 			first = newColumn;
 		} else {
 			for (int i = 2; i < index; i++) {
-				previousColumn = previousColumn.goRight;// ²åÈëÁĞÎ»ÖÃµÄÇ°Ò»ÁĞ
+				previousColumn = previousColumn.goRight;// æ’å…¥åˆ—ä½ç½®çš„å‰ä¸€åˆ—
 			}
-			MatrixLink currentColumn = previousColumn.goRight;// ²åÈëÁĞÎ»ÖÃ
+			MatrixLink currentColumn = previousColumn.goRight;// æ’å…¥åˆ—ä½ç½®
 			connectTwoColumn(previousColumn, newColumn);
 			connectTwoColumn(newColumn, currentColumn);
 		}
-		width++;// ÁĞÊı¼ÓÒ»
+		width++;// åˆ—æ•°åŠ ä¸€
 	}
 
-	// Éú³ÉÒ»ÁĞ
+	// ç”Ÿæˆä¸€åˆ—
 	private MatrixLink createColumn() {
 		MatrixLink first = new MatrixLink();
 		MatrixLink down = first;
@@ -95,7 +95,7 @@ public class MatrixLinkList {
 		return first;
 	}
 
-	// Éú³ÉÒ»ĞĞ
+	// ç”Ÿæˆä¸€è¡Œ
 	private MatrixLink createRow() {
 		MatrixLink first = new MatrixLink();
 		MatrixLink right = first;
@@ -106,8 +106,8 @@ public class MatrixLinkList {
 		return first;
 	}
 
-	// ºÏ²¢Á½ĞĞ
-	private void connectTwoRow(MatrixLink first1, MatrixLink first2) {// first2¿ÉÒÔÎª¿Õ
+	// ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½
+	private void connectTwoRow(MatrixLink first1, MatrixLink first2) {// first2ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
 		if (first2 == null) {
 			while (first1 != null) {
 				first1.goDown = null;
@@ -121,8 +121,8 @@ public class MatrixLinkList {
 		}
 	}
 
-	// ºÏ²¢Á½ÁĞ
-	private void connectTwoColumn(MatrixLink first1, MatrixLink first2) { // first2¿ÉÒÔÎª¿Õ
+	// åˆå¹¶ä¸¤è¡Œ
+	private void connectTwoColumn(MatrixLink first1, MatrixLink first2) { // first2å¯ä»¥ä¸ºç©º
 		if (first2 == null) {
 			while (first1 != null) {
 				first1.goRight = null;
@@ -136,49 +136,49 @@ public class MatrixLinkList {
 		}
 	}
 
-	// É¾³ıĞĞ
+	// åˆ é™¤è¡Œ
 	public MatrixLink deleteRow(int index) {
-		if (index < 1 || index > high) { // É¾³ı·Ç·¨ĞĞ
+		if (index < 1 || index > high) { // åˆ é™¤éæ³•è¡Œ
 			return null;
 		}
-		MatrixLink previousRow = first; // ÒªÉ¾³ıĞĞµÄÇ°Ò»ĞĞ
-		MatrixLink destinationRow = first; // ÒªÉ¾³ıµÄĞĞ
-		if (index == 1) { // É¾³ıµÚÒ»ĞĞ
-			first = first.goDown; // firstÖ¸ÏòµÚ¶şĞĞ¾ÍĞĞÁË
+		MatrixLink previousRow = first; // è¦åˆ é™¤è¡Œçš„å‰ä¸€è¡Œ
+		MatrixLink destinationRow = first; // è¦åˆ é™¤çš„è¡Œ
+		if (index == 1) { // åˆ é™¤ç¬¬ä¸€è¡Œ
+			first = first.goDown; // firstæŒ‡å‘ç¬¬äºŒè¡Œå°±è¡Œäº†
 		} else {
 			for (int i = 1; i < index; i++) {
-				previousRow = previousRow.goDown;// ÒÆ¶¯µ½Ä¿±êĞĞµÄÇ°Ò»ĞĞ
+				previousRow = previousRow.goDown;// ç§»åŠ¨åˆ°ç›®æ ‡è¡Œçš„å‰ä¸€è¡Œ
 			}
-			destinationRow = previousRow.goDown;// Ä¿±êĞĞ
-			MatrixLink behindRow = previousRow.goDown.goDown;// Ä¿±êĞĞºóÒ»ĞĞ
+			destinationRow = previousRow.goDown;// ç›®æ ‡è¡Œ
+			MatrixLink behindRow = previousRow.goDown.goDown;// ç›®æ ‡è¡Œåä¸€è¡Œ
 			connectTwoRow(previousRow, behindRow);
 		}
-		high--; // ĞĞÊı¼õÉÙ
+		high--; // è¡Œæ•°å‡å°‘
 		return destinationRow;
 	}
 
-	// É¾³ıÁĞ
+	// åˆ é™¤åˆ—
 	public MatrixLink deleteColumn(int index) {
-		if (index < 1 || index > width) { // É¾³ı·Ç·¨ĞĞ
+		if (index < 1 || index > width) { // åˆ é™¤éæ³•è¡Œ
 			return null;
 		}
-		MatrixLink previousColumn = first; // ÒªÉ¾³ıÁĞµÄÇ°Ò»ÁĞ
-		MatrixLink destinationColumn = first; // ÒªÉ¾³ıµÄÁĞ
-		if (index == 1) { // É¾³ıµÚÒ»ÁĞ
-			first = first.goRight; // firstÖ¸ÏòµÚ¶şÁĞ¾ÍĞĞÁË
+		MatrixLink previousColumn = first; // è¦åˆ é™¤åˆ—çš„å‰ä¸€åˆ—
+		MatrixLink destinationColumn = first; // è¦åˆ é™¤çš„åˆ—
+		if (index == 1) { // åˆ é™¤ç¬¬ä¸€åˆ—
+			first = first.goRight; // firstæŒ‡å‘ç¬¬äºŒåˆ—å°±è¡Œäº†
 		} else {
 			for (int i = 1; i < index; i++) {
-				previousColumn = previousColumn.goRight;// ÒÆ¶¯µ½Ä¿±êÁĞµÄÇ°Ò»ÁĞ
+				previousColumn = previousColumn.goRight;// ç§»åŠ¨åˆ°ç›®æ ‡åˆ—çš„å‰ä¸€åˆ—
 			}
-			destinationColumn = previousColumn.goRight; // Ä¿±êÁĞ
-			MatrixLink behindColumn = previousColumn.goRight.goRight; // Ä¿±êÁĞºóÒ»ÁĞ
+			destinationColumn = previousColumn.goRight; // ç›®æ ‡åˆ—
+			MatrixLink behindColumn = previousColumn.goRight.goRight; // ç›®æ ‡åˆ—åä¸€åˆ—
 			connectTwoColumn(previousColumn, behindColumn);
 		}
-		width--; // ÁĞÊı¼õÒ»
+		width--; // åˆ—æ•°å‡ä¸€
 		return destinationColumn;
 	}
 
-	// É¾³ıÖµ
+	// åˆ é™¤å€¼
 	public void remove(int row, int column) {
 		MatrixLink current = first;
 		for (int i = 1; i < row; i++) {
@@ -190,7 +190,7 @@ public class MatrixLinkList {
 		current.setId(0);
 	}
 
-	// ´òÓ¡ÏÔÊ¾
+	// æ‰“å°æ˜¾ç¤º
 	public void display() {
 		if (first == null) {
 			System.out.println();

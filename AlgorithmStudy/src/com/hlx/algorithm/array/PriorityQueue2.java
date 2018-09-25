@@ -23,7 +23,7 @@ public class PriorityQueue2 {
 			}
 		}
 		long temp = queArray[highPriority];
-		for (int i = highPriority; i < nItems - 1; i++) { // Êý×éºóÃæ²¿·ÝÍùÇ°ÒÆ
+		for (int i = highPriority; i < nItems - 1; i++) { // æ•°ç»„åŽé¢éƒ¨ä»½å¾€å‰ç§»
 			queArray[i] = queArray[i + 1];
 		}
 		nItems--;
@@ -31,21 +31,21 @@ public class PriorityQueue2 {
 	}
 	
 	// begin programming work 4.4
-	// ·½·¨Ò» £ºÈç¹û°´²åÈëµÄË³ÐòÏÔÊ¾
+	// æ–¹æ³•ä¸€ ï¼šå¦‚æžœæŒ‰æ’å…¥çš„é¡ºåºæ˜¾ç¤º
 	public void display() {
-		System.out.print("¶ÓÁÐÎª£º");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 0; i < nItems; i++) {
 			System.out.print(queArray[i] + " ");
 		}
 		System.out.println();
 	}
 
-	// ·½·¨¶þ£ºÈç¹û°´°´ÓÅÏÈ¼¶Ë³ÐòÏÔÊ¾
+	// æ–¹æ³•äºŒï¼šå¦‚æžœæŒ‰æŒ‰ä¼˜å…ˆçº§é¡ºåºæ˜¾ç¤º
 	public void display1() {
-		long[] temp = new long[nItems];// ÁÙÊ±±í
-		System.arraycopy(queArray, 0, temp, 0, nItems); // ¸´ÖÆµ½ÁÙÊ±±í
+		long[] temp = new long[nItems];// ä¸´æ—¶è¡¨
+		System.arraycopy(queArray, 0, temp, 0, nItems); // å¤åˆ¶åˆ°ä¸´æ—¶è¡¨
 		int out, in;
-		for (out = 1; out < nItems; out++) { // ²åÈëÅÅÐò
+		for (out = 1; out < nItems; out++) {
 			in = out;
 			long t = temp[out];
 			while (in > 0 && t < temp[in - 1]) {
@@ -54,7 +54,7 @@ public class PriorityQueue2 {
 			}
 			temp[in] = t;
 		}
-		System.out.print("¶ÓÁÐÎª£º");
+		System.out.print("é˜Ÿåˆ—ä¸ºï¼š");
 		for (int i = 0; i < nItems; i++) {
 			System.out.print(temp[i] + " ");
 		}

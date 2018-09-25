@@ -168,7 +168,7 @@ public class BinarySearchTree {
 	
 	private void preOder(TreeNode localRoot){
 		if(localRoot != null){
-			System.out.println(localRoot.getId() + " ");
+			System.out.print(localRoot.getId() + " ");
 			preOder(localRoot.getLeftChild());
 			preOder(localRoot.getRightChild());
 		}
@@ -177,7 +177,7 @@ public class BinarySearchTree {
 	private void inOder(TreeNode localRoot){
 		if(localRoot != null){
 			inOder(localRoot.getLeftChild());
-			System.out.println(localRoot.getId() + " ");
+			System.out.print(localRoot.getId() + " ");
 			inOder(localRoot.getRightChild());
 		}
 	}
@@ -186,7 +186,7 @@ public class BinarySearchTree {
 		if(localRoot != null){
 			postOder(localRoot.getLeftChild());
 			postOder(localRoot.getRightChild());
-			System.out.println(localRoot.getId() + " ");
+			System.out.print(localRoot.getId() + " ");
 		}
 	}
 	
@@ -196,9 +196,10 @@ public class BinarySearchTree {
 		int nBlanks = 32;
 		boolean isRowEmpty = false;
 		System.out.println(
-				".................................................");
+				"..................................................................................................");
 		while(isRowEmpty == false){
 			Stack<TreeNode> localStack = new Stack<TreeNode>();
+			isRowEmpty = true;
 			
 			for(int j=0; j<nBlanks; j++){
 				System.out.print(' ');
@@ -230,6 +231,6 @@ public class BinarySearchTree {
 			}
 		}
 		System.out.println(
-				".................................................");
+				"..................................................................................................");
 	}
 }

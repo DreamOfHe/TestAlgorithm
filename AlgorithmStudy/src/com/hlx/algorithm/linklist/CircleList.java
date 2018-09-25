@@ -17,15 +17,15 @@ public class CircleList { // programming work 5.3
 		} else {
 			link.setNext(current.getNext());
 			current.setNext(link);
-			current = link;// ²åÈëÔªËØ£¬currentÒªÒÆ¶¯ÒªĞÂÔªËØ
+			current = link;// æ’å…¥å…ƒç´ ï¼Œcurrentè¦ç§»åŠ¨è¦æ–°å…ƒç´ 
 		}
 		nItems++;
 	}
 
 	public Link remove() {
-		// listÎª¿ÕÊÇÃ»ÓĞ¿¼ÂÇ£¬ÔÚµ÷ÓÃremoveÖ®Ç°Ó¦¸ÃÅĞ¶ÏÊÇ·ñÎª¿Õ
-		Link temp = current.getNext();// É¾µôcurrentµÄÏÂÒ»¸öÔªËØ
-		if (current.getNext() == current) { // Ö»ÓĞÒ»¸öÔªËØÊ±
+		// listä¸ºç©ºæ˜¯æ²¡æœ‰è€ƒè™‘ï¼Œåœ¨è°ƒç”¨removeä¹‹å‰åº”è¯¥åˆ¤æ–­æ˜¯å¦ä¸ºç©º
+		Link temp = current.getNext();// åˆ æ‰currentçš„ä¸‹ä¸€ä¸ªå…ƒç´ 
+		if (current.getNext() == current) { // åªæœ‰ä¸€ä¸ªå…ƒç´ æ—¶
 			current = null;
 		} else {
 			current.setNext(current.getNext().getNext());
@@ -34,30 +34,30 @@ public class CircleList { // programming work 5.3
 		return temp;
 	}
 
-	public int peek() { // ·µ»Ø×îÔç²åÈëµÄÔªËØ
-		// µ÷ÓÃÇ°ÒªÅĞ¶ÏÊÇ·ñÎª¿Õ
+	public int peek() { // è¿”å›æœ€æ—©æ’å…¥çš„å…ƒç´ 
+		// è°ƒç”¨å‰è¦åˆ¤æ–­æ˜¯å¦ä¸ºç©º
 		return current.getNext().getId();
 	}
 
 	public Link find(int value) {
-		Link temp = current; // ±£´æÔ­À´µÄÎ»ÖÃ
+		Link temp = current; // ä¿å­˜åŸæ¥çš„ä½ç½®
 		Link result = null;
 		if (current == null) {
 			return result;
 		}
 		do {
-			step(); // ´ÓcurrentµÄÏÂÒ»¸öÔªËØ¿ªÊ¼±È½Ï
+			step(); // ä»currentçš„ä¸‹ä¸€ä¸ªå…ƒç´ å¼€å§‹æ¯”è¾ƒ
 			if (current.getId() == value) {
 				result = current;
-				current = temp; // »¹Ô­currentµ½Ô­À´µÄÎ»ÖÃ,ÕâÑù¾Í²»»á´òÂÒ²åÈëµÄË³Ğò£¬currentÖ¸Ïò×îºó²åÈëµÄÔªËØ
+				current = temp; // è¿˜åŸcurrentåˆ°åŸæ¥çš„ä½ç½®,è¿™æ ·å°±ä¸ä¼šæ‰“ä¹±æ’å…¥çš„é¡ºåºï¼ŒcurrentæŒ‡å‘æœ€åæ’å…¥çš„å…ƒç´ 
 				return result;
 			}
-		} while (current != temp); // currentµ½´ïÔ­À´µÄÎ»ÖÃ,Ò»ÖÜÑ­»·½áÊø
+		} while (current != temp); // currentåˆ°è¾¾åŸæ¥çš„ä½ç½®,ä¸€å‘¨å¾ªç¯ç»“æŸ
 		return result;
 	}
 
-	// ÍùÏÂÒÆÒ»²½
-	public void step() { // µ÷ÓÃstep()·½·¨ºó£¬Ë³Ğò»á±»´òÂÒ
+	// å¾€ä¸‹ç§»ä¸€æ­¥
+	public void step() { // è°ƒç”¨step()æ–¹æ³•åï¼Œé¡ºåºä¼šè¢«æ‰“ä¹±
 		if (current != null) {
 			current = current.getNext();
 		}
@@ -67,7 +67,7 @@ public class CircleList { // programming work 5.3
 		if (current != null) {
 			Link temp = current;
 			do {
-				step(); // ´ÓcurrentµÄÒ»ÏÂ¸ö¿ªÊ¼ÏÔÊ¾
+				step(); // ä»currentçš„ä¸€ä¸‹ä¸ªå¼€å§‹æ˜¾ç¤º
 				System.out.print(current.getId() + " ");
 			} while (current != temp);
 		}

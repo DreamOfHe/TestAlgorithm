@@ -11,7 +11,7 @@ public class CircleListTest {
 		theList.insert(40); // insert four items
 		theList.insert(30); // insert four items
 		theList.display(); // display list
-		System.out.println("×îÔç²åÈëµÄÔªËØ" + theList.peek());
+		System.out.println("é˜Ÿå¤´å…ƒç´ æ˜¯" + theList.peek());
 		Link link = theList.find(40);
 		if (link != null) {
 			System.out.println("find 40!");

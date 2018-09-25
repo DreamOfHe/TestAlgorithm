@@ -23,9 +23,9 @@ public class CircleListQueueTest {
 
 		theQueue.display();
 		Link n = theQueue.remove(); // (40, 50, 60, 70, 80)
-		System.out.print("É¾µô" );
+		System.out.print("åˆ æŽ‰" );
 		n.displayLink();
-		System.out.println("\n¶ÓÍ·ÔªËØÊÇ" + theQueue.peek());
+		System.out.println("\né˜Ÿå¤´å…ƒç´ æ˜¯" + theQueue.peek());
 		theQueue.display();
 
 	} 

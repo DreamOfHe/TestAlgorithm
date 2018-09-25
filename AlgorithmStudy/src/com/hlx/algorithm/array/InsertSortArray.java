@@ -89,7 +89,7 @@ public class InsertSortArray {
 		} // end for
 		nElems -= count;
 		for (int i = 0; i < nElems; i++) {
-			array[i] = array[i + count]; // °ÑÅÅºÃÐòµÄÔªËØÏòÇ°ÒÆ¶¯count¸öÎ»ÖÃ
+			array[i] = array[i + count];  // æŠŠæŽ’å¥½åºçš„å…ƒç´ å‘å‰ç§»åŠ¨countä¸ªä½ç½®
 		}
 	} // end insertionSort()
 	
@@ -108,7 +108,7 @@ public class InsertSortArray {
 		}
 		int order = 0;
 		for (int temp = 0; temp < nElems; temp++) {
-			if (array[temp] != NULL) {// ÒòÎªa[0]²»¿ÉÄÜµÈÓÚNULLËùÒÔ²Å¿ÉÒÔÓÃÕâÖÖ·½·¨
+			if (array[temp] != NULL) {// // å› ä¸ºa[0]ä¸å¯èƒ½ç­‰äºŽNILæ‰€ä»¥æ‰å¯ä»¥ç”¨è¿™ç§æ–¹æ³•
 				if (temp > order) {
 					array[order] = array[temp];
 				}

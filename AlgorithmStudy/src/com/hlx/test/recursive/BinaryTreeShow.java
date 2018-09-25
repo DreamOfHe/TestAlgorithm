@@ -3,15 +3,15 @@ package com.hlx.test.recursive;
 public class BinaryTreeShow { // programming work 6.2
 	private char[][] lines;
 
-	// number Ò»ĞĞ×î´óÏÔÊ¾×Ö·ûÊı
+	// number ä¸€è¡Œæœ€å¤§æ˜¾ç¤ºå­—ç¬¦æ•°
 	public BinaryTreeShow(int number) {
 		int rows = 1;
-		int numberDivide = number;// ²»ÒªÖ±½ÓÓÃnumberÈ¥³ı£¬ºóÃæ»¹ÓĞÓÃµ½number
-		while ((numberDivide = numberDivide / 2) != 0) {// ĞĞÊı numberºÍrowµÄ¹ØÏµ
+		int numberDivide = number;// ä¸è¦ç›´æ¥ç”¨numberå»é™¤ï¼Œåé¢è¿˜æœ‰ç”¨åˆ°number
+		while ((numberDivide = numberDivide / 2) != 0) {// è¡Œæ•° numberå’Œrowçš„å…³ç³»
 			rows++;							// 2^(row-1) = number 2^(5-1)=16
-		}									// µ±number=16Ê±£¬row=5
+		}									// å½“number=16æ—¶ï¼Œrow=5
 		lines = new char[rows][number];
-		for (int i = 0; i < rows; i++) { // ³õÊ¼»¯Êı×é
+		for (int i = 0; i < rows; i++) { // åˆå§‹åŒ–æ•°ç»„
 			for (int j = 0; j < number; j++) {
 				lines[i][j] = '-';
 			}
@@ -19,7 +19,7 @@ public class BinaryTreeShow { // programming work 6.2
 	}
 
 	public void display() {
-		for (int i = 0; i < lines.length; i++) { // ³õÊ¼»¯Êı×é
+		for (int i = 0; i < lines.length; i++) { // åˆå§‹åŒ–æ•°ç»„
 			for (int j = 0; j < lines[i].length; j++) {
 				System.out.print(lines[i][j]);
 			}
@@ -30,11 +30,11 @@ public class BinaryTreeShow { // programming work 6.2
 	public void makeBranches(int left, int right) {
 		int number = right - left + 1;
 		int row = 0;
-		int muberDivide = number; // ²»ÒªÖ±½ÓÓÃnumberÈ¥³ı£¬ºóÃæ»¹ÓĞÓÃµ½number
+		int muberDivide = number; // ä¸è¦ç›´æ¥ç”¨numberå»é™¤ï¼Œåé¢è¿˜æœ‰ç”¨åˆ°number
 		while ((muberDivide = muberDivide * 2) <= lines[0].length) {
-			row++;// ¼ÆËãµ±Ç°ĞĞºÅ
+			row++;// è®¡ç®—å½“å‰è¡Œå·
 		}
-		if (number == 1) {// »ùÖµÌõ¼ş
+		if (number == 1) {// åŸºå€¼æ¡ä»¶
 			lines[row][left] = 'X';
 			return;
 		} else {

@@ -55,36 +55,36 @@ public class BubbleSortArray {
 	}
 	
 	// programming work 3.4
-	// ��ż����Ĺ�������
-	// ��ʼ���� 4 3 2 1
-	// ��1��
-	// iΪż���Ƚ� (4,3)��(2,1)��
-	// ���Ϊ 3 4 1 2
-	// iΪ�����Ƚ� (4,1)��
-	// ���Ϊ 3 1 4 2
-	// ��2��
-	// iΪż���Ƚ� (3,1)��(4,2)��
-	// ���Ϊ1 3 2 4
-	// iΪ�����Ƚ� (3,2)��
-	// ���Ϊ1 2 3 4
-	// ��3��
-	// iΪż���Ƚ� (1,2)��(3,4)��
-	// ���Ϊ1 2 3 4
-	// iΪ�����Ƚ�(2,3)
-	// ���Ϊ1 2 3 4
-	// �˴αȽ�û�н����������������
+	// 奇偶排序的过程如下
+	// 初始序列 4 3 2 1
+	// 第1次
+	// i为偶数比较 (4,3)和(2,1)对
+	// 结果为 3 4 1 2
+	// i为奇数比较 (4,1)对
+	// 结果为 3 1 4 2
+	// 第2次
+	// i为偶数比较 (3,1)和(4,2)对
+	// 结果为1 3 2 4
+	// i为奇数比较 (3,2)对
+	// 结果为1 2 3 4
+	// 第3次
+	// i为偶数比较 (1,2)和(3,4)对
+	// 结果为1 2 3 4
+	// i为奇数比较(2,3)
+	// 结果为1 2 3 4
+	// 此次比较没有交换，所以排序结束
  
 	public void oddEvenSort() {
 		boolean change = true;
-		while (change) {// �������н���ʱ���������
+		while (change) {// 当不再有交换时，排序完成
 			change = false;
-			for (int i = 0; i < nElems - 1; i += 2) { // iΪż��
+			for (int i = 0; i < nElems - 1; i += 2) { // i为偶数
 				if (array[i] > array[i + 1]) {
 					swap(i, i + 1);
 					change = true;
 				}
 			}
-			for (int i = 1; i < nElems - 1; i += 2) { // iΪ����
+			for (int i = 1; i < nElems - 1; i += 2) { // i为奇数
 				if (array[i] > array[i + 1]) {
 					swap(i, i + 1);
 					change = true;
