@@ -106,8 +106,8 @@ public class MatrixLinkList {
 		return first;
 	}
 
-	// �ϲ�����
-	private void connectTwoRow(MatrixLink first1, MatrixLink first2) {// first2����Ϊ��
+	// 合并两行
+	private void connectTwoRow(MatrixLink first1, MatrixLink first2) {// first2可以为空
 		if (first2 == null) {
 			while (first1 != null) {
 				first1.goDown = null;
@@ -121,7 +121,7 @@ public class MatrixLinkList {
 		}
 	}
 
-	// 合并两行
+	// 合并两列
 	private void connectTwoColumn(MatrixLink first1, MatrixLink first2) { // first2可以为空
 		if (first2 == null) {
 			while (first1 != null) {
