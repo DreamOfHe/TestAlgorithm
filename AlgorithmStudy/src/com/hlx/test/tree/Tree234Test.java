@@ -17,7 +17,7 @@ public class Tree234Test {
 		theTree.insert(70);
 		
 		while(true){
-			System.out.print("Enter first letter of show, insert or find: ");
+			System.out.print("Enter first letter of show, insert, order, min or find: ");
 			char choice = MyMethod.getChar();
 			switch(choice){
 			case 's':
@@ -37,6 +37,13 @@ public class Tree234Test {
 				} else {
 					System.out.println("Could not find " + value);
 				}
+				break;
+			case 'm':
+				long minValue = theTree.getMinValue();
+				System.out.println("Min value is: " + minValue);
+				break;
+			case 'o':
+				theTree.traverse(2);
 				break;
 			default:
 				System.out.println("Invalid entry\n");

@@ -110,4 +110,73 @@ public class Tree234 {
 			}
 		}
 	}
+	
+	// programming work 10.1
+	// 这里没有考虑空树的情况，调用前确保树不为空
+	public long getMinValue() {
+		Tree234Node parent = root;
+		Tree234Node current = root;
+		while (current != null) {
+			parent = current;
+			current = current.getChild(0);
+		}
+		return parent.getItem(0).getdData();
+	}
+	
+	public void traverse(int traverseType) {
+		switch (traverseType) {
+		case 1:
+			System.out.print("\nPreorder traversal: ");
+			// preOrder(root);
+			break;
+		case 2:
+			System.out.print("\nInorder traversal: ");
+			inOrder(root);
+			break;
+		case 3:
+			System.out.print("\nPostorder traversal: ");
+			// postOrder(root);
+			break;
+		}
+		System.out.println();
+	}
+	
+	// programming work 10.2
+	private void inOrder(Tree234Node root) {
+		if (root == null) {
+			return;
+		}
+		int i = 0;
+		for (; i < root.getNumItems(); i++) {
+			inOrder(root.getChild(i));
+			System.out.print(root.getItem(i).getdData() + " ");
+		}
+		if (i != 0) {
+			inOrder(root.getChild(i));
+		}
+	}
+	
+	// programming work 10.3
+	public void sort(long[] array) {
+		this.root = new Tree234Node();
+		for (int i = 0; i < array.length; i++) {
+			this.insert(array[i]);
+		}
+		inOrderForSort(array, root, 0);
+	}
+	
+	private int inOrderForSort(long[] array, Tree234Node root, int arrayIndex) {
+		if (root == null) {
+			return arrayIndex;
+		}
+		int i = 0;
+		for (; i < root.getNumItems(); i++) {
+			arrayIndex = inOrderForSort(array, root.getChild(i), arrayIndex);
+			array[arrayIndex++] = root.getItem(i).getdData(); // arrayIndex只在这里增加
+		}
+		if (i != 0) {
+			arrayIndex = inOrderForSort(array, root.getChild(i), arrayIndex);
+		}
+		return arrayIndex;
+	}
 }
