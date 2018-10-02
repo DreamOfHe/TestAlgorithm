@@ -10,6 +10,9 @@ public class BinarySearchTree {
 	}
 	
 	public TreeNode find(int key){    // find node with given key
+		if(root == null){
+			return null;
+		}
 		TreeNode current = root;
 		while(current.getId() != key){
 			if(key < current.getId()){
@@ -155,7 +158,7 @@ public class BinarySearchTree {
 			preOder(root);
 			break;
 		case 2:
-			System.out.println("\nInorder traversal: ");
+			//System.out.println("\nInorder traversal: ");
 			inOder(root);
 			break;
 		case 3:

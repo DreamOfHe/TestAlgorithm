@@ -49,13 +49,15 @@ public class HashTable {
 	// programming work 11.4
 	public void rehash(){
 		int resize = getPrime(arraySize * 2);
-		System.out.println(resize);
+		System.out.println("resize is: " + resize);
 		HashTable ht = new HashTable(resize);
 		for(int i=0; i<arraySize; i++){
 			if(hashArray[i] != null && hashArray[i].getKey() != -1){
 				ht.insert(hashArray[i]);
 			}
 		}
+		this.hashArray = ht.hashArray;
+		this.arraySize = resize;
 	}
 	
 	private int getPrime(int min){
