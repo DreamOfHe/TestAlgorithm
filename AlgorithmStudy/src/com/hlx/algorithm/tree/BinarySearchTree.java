@@ -236,4 +236,41 @@ public class BinarySearchTree {
 		System.out.println(
 				"..................................................................................................");
 	}
+	
+	// programming work 12.4
+	public TreeNode removeMax(){
+		TreeNode grandParent = root;
+		TreeNode parent = root;
+		TreeNode current = root;
+		
+		while(current != null){
+			grandParent = parent;
+			parent = current;
+			current = current.getRightChild();
+		}
+		
+		// parent 是否为根
+		if(parent == root){
+			root = root.getLeftChild();
+		} else {
+			grandParent.setRightChild(parent.getLeftChild());
+		}
+		
+		return parent;
+	}
+	
+	// programming work 12.4
+	public TreeNode peekMax(){
+		TreeNode parent = root;
+		TreeNode current = root;
+		while(current != null){
+			parent = current;
+			current = current.getRightChild();
+		}
+		return parent;
+	}
+	
+	public boolean isEmpty(){
+		return root == null;
+	}
 }

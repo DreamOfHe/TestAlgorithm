@@ -15,6 +15,10 @@ public class Heap {
 		return currentSize == 0;
 	}
 	
+	public boolean isFull(){
+		return currentSize == maxSize;
+	}
+	
 	public boolean insert(int key){
 		if(currentSize == maxSize){
 			return false;
@@ -23,6 +27,10 @@ public class Heap {
 		heapArray[currentSize]  = newNode;
 		trickleUp(currentSize++);
 		return true;
+	}
+	
+	public void insertAt(int index, HeapNode newNode){
+		heapArray[index] = newNode;
 	}
 	
 	private void trickleUp(int index){
@@ -73,6 +81,13 @@ public class Heap {
 		heapArray[index] = top;
 	}
 	
+	// make random array into heap
+	public void makeArrayToHeap(){
+		for(int j=currentSize/2-1; j>=0; j--){
+			trickleDown(j);
+		}
+	}
+	
 	public boolean change(int index, int newValue){
 		if(index<0 || index>=currentSize){
 			return false;
@@ -88,8 +103,17 @@ public class Heap {
 		return true;
 	}
 	
+	public void incrementSize(){
+		currentSize++;
+	}
+	
+	// programming work 12.3
+	public HeapNode peek(){
+		return heapArray[0];
+	}
+	
 	public void displayHeap(){
-		System.out.print("heapArray: ");   // array format
+		System.out.print("\nheapArray: ");   // array format
 		for(int m=0; m<currentSize; m++){
 			if(heapArray[m] != null){
 				System.out.print(heapArray[m].getKey() + " ");
@@ -130,5 +154,11 @@ public class Heap {
 			}
 		}
 		System.out.println("\n" + dots + dots);        // dotted bottom line
+	}
+	
+	public void displayArray(){
+		for(int j=0; j<maxSize; j++){
+			System.out.print(heapArray[j].getKey() + " ");
+		}
 	}
 }
